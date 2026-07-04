@@ -127,36 +127,6 @@
     reveals.forEach(function (el) { revealObs.observe(el); });
   }
 
-  /* ---------- animated counters ---------- */
-  var counters = document.querySelectorAll('.stat-num[data-count]');
-  function runCounter(el) {
-    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-    if (prefersReducedMotion) { el.textContent = target; return; }
-    var duration = 1400;
-    var start = null;
-    function step(ts) {
-      if (start === null) start = ts;
-      var p = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(eased * target);
-      if (p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  if ('IntersectionObserver' in window) {
-    var countObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          runCounter(entry.target);
-          countObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    counters.forEach(function (el) { countObs.observe(el); });
-  } else {
-    counters.forEach(function (el) { el.textContent = el.getAttribute('data-count'); });
-  }
-
   /* ---------- publications filter ---------- */
   var filterButtons = document.querySelectorAll('.pub-filter');
   var pubs = document.querySelectorAll('.pub');
