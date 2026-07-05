@@ -43,7 +43,7 @@
     'hero.cta.explore': '연구 분야 보기',
     'hero.cta.join': '연구실 지원',
     'mission.eyebrow': '미션',
-    'mission.title': '정밀도·효율·소형화·강건성,<br>모든 축에서.',
+    'mission.title': '모든 축에서 —<br>정밀하게, 효율적으로, 작게, 강인하게.',
     'mission.body': 'AXIS는 정밀 아날로그 프런트엔드부터 고해상도 데이터 컨버터, 전력관리 IC까지 폭넓은 집적회로와 시스템을 설계합니다. 연구실 이름의 X는 변수입니다. 응용은 계속 달라지지만 기준은 달라지지 않습니다 — 정확도, 에너지 효율, 소형화, 그리고 현장 강건성.',
     'recruit.title': '신입 연구원 모집',
     'recruit.desc': '열정 있는 <strong>석사</strong>·<strong>박사</strong> 과정 및 <strong>박사후연구원</strong>을 모집합니다. <a href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr</a>로 연락해 주세요.',
