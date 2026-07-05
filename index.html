@@ -26,7 +26,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   <script type="application/ld+json">
@@ -56,7 +56,7 @@
         "email": "jrhee@gachon.ac.kr",
         "image": "https://jooyeolrhee.github.io/assets/professor.jpg",
         "url": "https://jooyeolrhee.github.io/#professor",
-        "sameAs": ["https://orcid.org/0000-0002-2961-4925"],
+        "sameAs": ["https://orcid.org/0000-0002-2961-4925", "https://scholar.google.com/citations?user=aLVQxqgAAAAJ"],
         "worksFor": { "@type": "CollegeOrUniversity", "name": "Gachon University" }
       }
     ]
@@ -91,15 +91,16 @@
   </a>
 
   <nav class="nav-links" id="navLinks" aria-label="Primary">
-    <a href="#home" class="nav-link is-active">Home</a>
-    <a href="#research" class="nav-link">Research</a>
-    <a href="#publications" class="nav-link">Publications</a>
-    <a href="#professor" class="nav-link">Professor</a>
-    <a href="#members" class="nav-link">Members</a>
-    <a href="#contact" class="nav-link">Contact</a>
+    <a href="#home" class="nav-link is-active" data-i18n="nav.home">Home</a>
+    <a href="#research" class="nav-link" data-i18n="nav.research">Research</a>
+    <a href="#publications" class="nav-link" data-i18n="nav.publications">Publications</a>
+    <a href="#professor" class="nav-link" data-i18n="nav.professor">Professor</a>
+    <a href="#members" class="nav-link" data-i18n="nav.members">Members</a>
+    <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
   </nav>
 
   <div class="nav-actions">
+    <button class="lang-toggle" id="langToggle" type="button" aria-label="한국어로 보기">KO</button>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme">
       <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.6" fill="currentColor"/><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="2.2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.8"/><line x1="2.2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.8" y2="12"/><line x1="5.1" y1="5.1" x2="7.1" y2="7.1"/><line x1="16.9" y1="16.9" x2="18.9" y2="18.9"/><line x1="5.1" y1="18.9" x2="7.1" y2="16.9"/><line x1="16.9" y1="7.1" x2="18.9" y2="5.1"/></g></svg>
       <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.6 14.6A8.7 8.7 0 0 1 9.4 3.4 8.9 8.9 0 1 0 20.6 14.6Z"/></svg>
@@ -119,11 +120,11 @@
     <div class="hero-inner">
       <p class="hero-eyebrow reveal">AXIS — Analog X Integrated Systems · Gachon University</p>
       <h1 class="hero-title reveal">ANALOG <span class="x-mark">X</span><br>INTEGRATED SYSTEMS</h1>
-      <p class="hero-tagline reveal">The AXIS Design Laboratory — a central axis in analog and mixed-signal integrated circuits.</p>
-      <p class="hero-desc reveal">We build versatile integrated circuits and systems that push performance and efficiency, spanning precision analog circuits, data converters, and power management ICs.</p>
+      <p class="hero-tagline reveal" data-i18n="hero.tagline">The AXIS Design Laboratory — a central axis in analog and mixed-signal integrated circuits.</p>
+      <p class="hero-desc reveal" data-i18n="hero.desc">We build versatile integrated circuits and systems that push performance and efficiency, spanning precision analog circuits, data converters, and power management ICs.</p>
       <div class="hero-cta reveal">
-        <a class="btn btn-primary" href="#research">Explore research <span aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="mailto:jrhee@gachon.ac.kr">Join the lab <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-primary" href="#research"><span data-i18n="hero.cta.explore">Explore research</span> <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="mailto:jrhee@gachon.ac.kr"><span data-i18n="hero.cta.join">Join the lab</span> <span aria-hidden="true">↗</span></a>
       </div>
       <div class="hero-chips reveal">
         <span class="chip">Precision Analog</span>
@@ -141,16 +142,16 @@
   <section class="mission" id="mission">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow">Mission</p>
-        <h2>Reproducible precision,<br>from silicon to deployment.</h2>
+        <p class="eyebrow" data-i18n="mission.eyebrow">Mission</p>
+        <h2 data-i18n="mission.title">Reproducible precision,<br>from silicon to deployment.</h2>
       </div>
       <div class="mission-body reveal">
-        <p>AXIS focuses on versatile integrated circuits and systems that enhance performance and efficiency. The lab's scope is deliberately broad — precision analog front-ends, high-resolution analog-to-digital converters, and power management integrated circuits — unified by a commitment to accuracy, energy efficiency, and field robustness.</p>
+        <p data-i18n="mission.body">AXIS focuses on versatile integrated circuits and systems that enhance performance and efficiency. The lab's scope is deliberately broad — precision analog front-ends, high-resolution analog-to-digital converters, and power management integrated circuits — unified by a commitment to accuracy, energy efficiency, and field robustness.</p>
       </div>
       <div class="recruit-banner reveal">
         <div class="recruit-text">
-          <p class="recruit-title">We are recruiting</p>
-          <p class="recruit-desc">We are recruiting motivated <strong>MS</strong>, <strong>PhD</strong>, and <strong>postdoctoral</strong> researchers. Please contact <a href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr</a>.</p>
+          <p class="recruit-title" data-i18n="recruit.title">We are recruiting</p>
+          <p class="recruit-desc" data-i18n="recruit.desc">We are recruiting motivated <strong>MS</strong>, <strong>PhD</strong>, and <strong>postdoctoral</strong> researchers. Please contact <a href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr</a>.</p>
         </div>
         <a class="btn btn-primary" href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr <span aria-hidden="true">↗</span></a>
       </div>
@@ -161,9 +162,9 @@
   <section class="research" id="research">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow"><span class="eyebrow-idx">01</span> Research</p>
-        <h2>What we work on</h2>
-        <p class="section-lede">AXIS advances mixed-signal integrated circuits for ultra-low-power, high-accuracy sensor interfaces, power management and energy harvesting, data converters, and in-sensor / edge computing. Our mission is to deliver reproducible precision, system-level energy efficiency, and field robustness — from silicon to real-world deployment.</p>
+        <p class="eyebrow"><span class="eyebrow-idx">01</span> <span data-i18n="research.eyebrow">Research</span></p>
+        <h2 data-i18n="research.title">What we work on</h2>
+        <p class="section-lede" data-i18n="research.lede">AXIS advances mixed-signal integrated circuits for ultra-low-power, high-accuracy sensor interfaces, power management and energy harvesting, data converters, and in-sensor / edge computing. Our mission is to deliver reproducible precision, system-level energy efficiency, and field robustness — from silicon to real-world deployment.</p>
       </div>
 
       <div class="theme-grid">
@@ -172,9 +173,9 @@
             <span class="theme-tag">Theme · PMIC / EH</span>
             <span class="theme-idx">01</span>
           </div>
-          <h3>Power Management &amp; Energy Harvesting ICs</h3>
-          <p class="theme-body">Our PMIC research enables battery-constrained or battery-free operation in distributed sensors and edge devices. We study autonomous start-up, adaptive power-tracking algorithms, and multi-mode DC–DC conversion with integrated protection and safety. We also develop on-chip regulation using low-dropout regulators (LDOs) and precision references (bandgap references, BGRs), and investigate power delivery for AI servers and HBM stacks.</p>
-          <p class="theme-focus"><b>Focus</b>Start-up for energy-scarce sources · maximum-power-tracking control · mode-transition efficiency · on-chip regulation (LDOs) · precision references (BGRs) · AI-server / HBM power delivery.</p>
+          <h3 data-i18n="theme1.title">Power Management &amp; Energy Harvesting ICs</h3>
+          <p class="theme-body" data-i18n="theme1.body">Our PMIC research enables battery-constrained or battery-free operation in distributed sensors and edge devices. We study autonomous start-up, adaptive power-tracking algorithms, and multi-mode DC–DC conversion with integrated protection and safety. We also develop on-chip regulation using low-dropout regulators (LDOs) and precision references (bandgap references, BGRs), and investigate power delivery for AI servers and HBM stacks.</p>
+          <p class="theme-focus"><b data-i18n="focus.label">Focus</b><span data-i18n="theme1.focus">Start-up for energy-scarce sources · maximum-power-tracking control · mode-transition efficiency · on-chip regulation (LDOs) · precision references (BGRs) · AI-server / HBM power delivery.</span></p>
         </article>
 
         <article class="theme-card reveal">
@@ -182,9 +183,9 @@
             <span class="theme-tag alt">Theme · AFE</span>
             <span class="theme-idx">02</span>
           </div>
-          <h3>Precision Analog &amp; Sensor Interfaces</h3>
-          <p class="theme-body">We design low-power, low-drift analog front-ends for environmental, industrial, and biomedical sensing. Emphasis is placed on accuracy over temperature and lifetime, high input impedance, and robustness to interference.</p>
-          <p class="theme-focus"><b>Focus</b>Precision amplification · high-impedance readout · calibration and system-level linearity.</p>
+          <h3 data-i18n="theme2.title">Precision Analog &amp; Sensor Interfaces</h3>
+          <p class="theme-body" data-i18n="theme2.body">We design low-power, low-drift analog front-ends for environmental, industrial, and biomedical sensing. Emphasis is placed on accuracy over temperature and lifetime, high input impedance, and robustness to interference.</p>
+          <p class="theme-focus"><b data-i18n="focus.label">Focus</b><span data-i18n="theme2.focus">Precision amplification · high-impedance readout · calibration and system-level linearity.</span></p>
         </article>
 
         <article class="theme-card reveal">
@@ -192,9 +193,9 @@
             <span class="theme-tag">Theme · ADC / DAC</span>
             <span class="theme-idx">03</span>
           </div>
-          <h3>Data Converters (ADC / DAC)</h3>
-          <p class="theme-body">We develop energy-efficient data converters tailored to sensing and instrumentation. Architectures are chosen per application to achieve high effective resolution at low supply voltages, and are co-optimized with analog front-ends and digital post-processing.</p>
-          <p class="theme-focus"><b>Focus</b>Converter-system co-design · dynamic-range management · background calibration · verification from behavioral models to silicon.</p>
+          <h3 data-i18n="theme3.title">Data Converters (ADC / DAC)</h3>
+          <p class="theme-body" data-i18n="theme3.body">We develop energy-efficient data converters tailored to sensing and instrumentation. Architectures are chosen per application to achieve high effective resolution at low supply voltages, and are co-optimized with analog front-ends and digital post-processing.</p>
+          <p class="theme-focus"><b data-i18n="focus.label">Focus</b><span data-i18n="theme3.focus">Converter-system co-design · dynamic-range management · background calibration · verification from behavioral models to silicon.</span></p>
         </article>
 
         <article class="theme-card reveal">
@@ -202,9 +203,9 @@
             <span class="theme-tag alt">Theme · ISC / Edge</span>
             <span class="theme-idx">04</span>
           </div>
-          <h3>In-Sensor Computing &amp; Edge AI</h3>
-          <p class="theme-body">We explore near-sensor analog pre-processing and low-overhead feature extraction to reduce data movement and energy. Designs are co-optimized with the sensing modality and the downstream digital pipeline.</p>
-          <p class="theme-focus"><b>Focus</b>Analog-domain preprocessing · event-driven capture · standardized interfaces for photonic, resistive, and capacitive sensors.</p>
+          <h3 data-i18n="theme4.title">In-Sensor Computing &amp; Edge AI</h3>
+          <p class="theme-body" data-i18n="theme4.body">We explore near-sensor analog pre-processing and low-overhead feature extraction to reduce data movement and energy. Designs are co-optimized with the sensing modality and the downstream digital pipeline.</p>
+          <p class="theme-focus"><b data-i18n="focus.label">Focus</b><span data-i18n="theme4.focus">Analog-domain preprocessing · event-driven capture · standardized interfaces for photonic, resistive, and capacitive sensors.</span></p>
         </article>
       </div>
     </div>
@@ -214,15 +215,15 @@
   <section class="publications" id="publications">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow"><span class="eyebrow-idx">02</span> Selected Works</p>
-        <h2>Publications</h2>
-        <p class="pub-note"><b>28</b> journal &amp; conference papers · <i class="ast">*</i> Corresponding author</p>
+        <p class="eyebrow"><span class="eyebrow-idx">02</span> <span data-i18n="pubs.eyebrow">Selected Works</span></p>
+        <h2 data-i18n="pubs.title">Publications</h2>
+        <p class="pub-note" data-i18n="pubs.note"><b>28</b> journal &amp; conference papers · <i class="ast">*</i> Corresponding author</p>
       </div>
 
       <div class="pub-filters reveal" role="group" aria-label="Filter publications">
-        <button class="pub-filter is-active" type="button" data-filter="all" aria-pressed="true">All <span class="count">28</span></button>
-        <button class="pub-filter" type="button" data-filter="journal" aria-pressed="false">Journals <span class="count">19</span></button>
-        <button class="pub-filter" type="button" data-filter="conference" aria-pressed="false">Conferences <span class="count">9</span></button>
+        <button class="pub-filter is-active" type="button" data-filter="all" aria-pressed="true"><span data-i18n="pubs.filter.all">All</span> <span class="count">28</span></button>
+        <button class="pub-filter" type="button" data-filter="journal" aria-pressed="false"><span data-i18n="pubs.filter.journal">Journals</span> <span class="count">19</span></button>
+        <button class="pub-filter" type="button" data-filter="conference" aria-pressed="false"><span data-i18n="pubs.filter.conf">Conferences</span> <span class="count">9</span></button>
       </div>
 
       <!-- 2026 -->
@@ -368,12 +369,12 @@
         <div class="pub-list">
           <article class="pub" data-type="journal">
             <div class="pub-meta"><span class="badge">IEEE TCAS-II</span><span class="pub-authors">J. S. Cho, J. Rhee, S. Kim, Y. T. Yang, J. H. Jun, H. Lee, S. Kim</span></div>
-            <h3 class="pub-title"><span>A 1.2-V 108.9-dB A-Weighted DR 101.4-dB SNDR Audio ΣΔ ADC Using a Multi-Rate Noise-Shaping Quantizer</span></h3>
+            <h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8404136" target="_blank" rel="noopener">A 1.2-V 108.9-dB A-Weighted DR 101.4-dB SNDR Audio ΣΔ ADC Using a Multi-Rate Noise-Shaping Quantizer</a></h3>
             <p class="pub-cite">IEEE Trans. Circuits &amp; Systems II, vol. 65, no. 10, pp. 1315–1319, Oct. 2018</p>
           </article>
           <article class="pub" data-type="conference">
             <div class="pub-meta"><span class="badge flagship">IEEE ISSCC</span><span class="pub-authors">J. Jun, J. Rhee, MS. Kim, J. Kang, S. Kim</span></div>
-            <h3 class="pub-title"><span>A 21.8-bit Sub-100 µHz 1/f Corner 2.4 µV Offset Programmable-Gain Read-Out IC for Bridge Measurement Systems</span></h3>
+            <h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/8310318" target="_blank" rel="noopener">A 21.8-bit Sub-100 µHz 1/f Corner 2.4 µV Offset Programmable-Gain Read-Out IC for Bridge Measurement Systems</a></h3>
             <p class="pub-cite">IEEE Int. Solid-State Circuits Conference (ISSCC), Feb. 2018</p>
           </article>
         </div>
@@ -385,7 +386,7 @@
         <div class="pub-list">
           <article class="pub" data-type="journal">
             <div class="pub-meta"><span class="badge">IEEE Sensors J.</span><span class="pub-authors">J. Jun, J. Rhee, S. Kim, S. Kim</span></div>
-            <h3 class="pub-title"><span>An SC Interface with Programmable-Gain Embedded ΔΣ ADC for Monolithic 3-Axis 3-D Stacked Capacitive MEMS Accelerometer</span></h3>
+            <h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/7973150" target="_blank" rel="noopener">An SC Interface with Programmable-Gain Embedded ΔΣ ADC for Monolithic 3-Axis 3-D Stacked Capacitive MEMS Accelerometer</a></h3>
             <p class="pub-cite">IEEE Sensors Journal, vol. 17, no. 17, pp. 5558–5568, Sep. 2017</p>
           </article>
         </div>
@@ -397,12 +398,12 @@
         <div class="pub-list">
           <article class="pub" data-type="journal">
             <div class="pub-meta"><span class="badge">IEEE TCAS-II</span><span class="pub-authors">H. Lee, D. Shim, J. Rhee, M. Kim, S. Kim</span></div>
-            <h3 class="pub-title"><span>A Sub-1.0V On-Chip CMOS Thermometer with a Folded Temperature Sensor for Low-Power Mobile DRAM</span></h3>
+            <h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/7407634" target="_blank" rel="noopener">A Sub-1.0V On-Chip CMOS Thermometer with a Folded Temperature Sensor for Low-Power Mobile DRAM</a></h3>
             <p class="pub-cite">IEEE Trans. Circuits &amp; Systems II, vol. 63, no. 6, pp. 553–557, Jun. 2016</p>
           </article>
           <article class="pub" data-type="conference">
             <div class="pub-meta"><span class="badge conf">IEEE ISLPED</span><span class="pub-authors">J. Jun, J. Rhee, S. Kim</span></div>
-            <h3 class="pub-title"><span>A 386-µW, 15.2-bit Programmable-Gain Embedded Delta-Sigma ADC for Sensor Applications</span></h3>
+            <h3 class="pub-title"><a href="https://dl.acm.org/doi/10.1145/2934583.2934636" target="_blank" rel="noopener">A 386-µW, 15.2-bit Programmable-Gain Embedded Delta-Sigma ADC for Sensor Applications</a></h3>
             <p class="pub-cite">IEEE Int. Symp. on Low Power Electronics and Design (ISLPED), Aug. 2016</p>
           </article>
           <article class="pub" data-type="conference">
@@ -431,7 +432,7 @@
         <div class="pub-list">
           <article class="pub" data-type="journal">
             <div class="pub-meta"><span class="badge flagship">IEEE JSSC</span><span class="pub-authors">D. Shim, H. Jeong, H. Lee, J. Rhee, DK. Jeong, S. Kim</span></div>
-            <h3 class="pub-title"><span>A Process-Variation-Tolerant On-Chip CMOS Thermometer for Auto Temperature Compensated Self-Refresh of Low-Power Mobile DRAM</span></h3>
+            <h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/6567994" target="_blank" rel="noopener">A Process-Variation-Tolerant On-Chip CMOS Thermometer for Auto Temperature Compensated Self-Refresh of Low-Power Mobile DRAM</a></h3>
             <p class="pub-cite">IEEE Journal of Solid-State Circuits, vol. 48, no. 10, pp. 2550–2557, Oct. 2013</p>
           </article>
         </div>
@@ -443,7 +444,7 @@
         <div class="pub-list">
           <article class="pub" data-type="conference">
             <div class="pub-meta"><span class="badge conf">IEEE SoCC</span><span class="pub-authors">S. Kim, SI. Na, TH. Kim, H. Lee, S. Kim, J. Rhee, S. Kim</span></div>
-            <h3 class="pub-title"><span>Neural Recording System with Low-Noise Analog Front-End and Comparator-Based Cyclic ADC</span></h3>
+            <h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/6398393" target="_blank" rel="noopener">Neural Recording System with Low-Noise Analog Front-End and Comparator-Based Cyclic ADC</a></h3>
             <p class="pub-cite">IEEE Int. SoC Conference (SoCC), pp. 110–114, Sep. 2012</p>
           </article>
         </div>
@@ -456,8 +457,8 @@
   <section class="professor" id="professor">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow"><span class="eyebrow-idx">03</span> Principal Investigator</p>
-        <h2>Professor</h2>
+        <p class="eyebrow"><span class="eyebrow-idx">03</span> <span data-i18n="prof.eyebrow">Principal Investigator</span></p>
+        <h2 data-i18n="prof.title">Professor</h2>
       </div>
 
       <div class="prof-layout">
@@ -466,60 +467,65 @@
             <img src="assets/professor.jpg" alt="Portrait of Professor Jooyeol Rhee" width="640" height="823" loading="lazy" decoding="async">
           </div>
           <dl class="prof-card">
-            <div class="prof-row"><dt>Email</dt><dd><a href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr</a></dd></div>
-            <div class="prof-row"><dt>Tel</dt><dd>031-750-5698</dd></div>
-            <div class="prof-row"><dt>Office</dt><dd>Room #6-10, Semiconductor Bldg.</dd></div>
+            <div class="prof-row"><dt data-i18n="label.email">Email</dt><dd><a href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr</a></dd></div>
+            <div class="prof-row"><dt data-i18n="label.tel">Tel</dt><dd>031-750-5698</dd></div>
+            <div class="prof-row"><dt data-i18n="label.office">Office</dt><dd>Room #6-10, Semiconductor Bldg.</dd></div>
             <div class="prof-row"><dt>ORCID</dt><dd><a href="https://orcid.org/0000-0002-2961-4925" target="_blank" rel="noopener">0000-0002-2961-4925</a></dd></div>
+            <div class="prof-row"><dt>Scholar</dt><dd><a href="https://scholar.google.com/citations?user=aLVQxqgAAAAJ" target="_blank" rel="noopener">Google Scholar</a></dd></div>
           </dl>
         </aside>
 
         <div class="prof-main">
           <div class="reveal">
             <h3 class="prof-name">Jooyeol Rhee <span class="prof-kr">이주열</span></h3>
-            <p class="prof-role">Assistant Professor</p>
-            <p class="prof-dept">Department of System Semiconductor, Gachon University</p>
+            <p class="prof-role" data-i18n="prof.role">Assistant Professor</p>
+            <p class="prof-dept" data-i18n="prof.dept">Department of System Semiconductor, Gachon University</p>
           </div>
 
           <div class="prof-block reveal">
-            <p class="block-label">Education</p>
+            <p class="block-label" data-i18n="edu.label">Education</p>
             <ol class="timeline">
               <li>
                 <span class="tl-when">2012.03 – 2019.02</span>
-                <span class="tl-what"><strong>Ph.D., Electrical Engineering and Computer Science</strong>Seoul National University (SNU), Seoul, Korea</span>
+                <span class="tl-what"><strong data-i18n="edu1.deg">Ph.D., Electrical Engineering and Computer Science</strong><span data-i18n="edu1.inst">Seoul National University (SNU), Seoul, Korea</span></span>
               </li>
               <li>
                 <span class="tl-when">2010.09 – 2011.11</span>
-                <span class="tl-what"><strong>M.Eng., Electrical Engineering</strong>University of Toronto, ON, Canada</span>
+                <span class="tl-what"><strong data-i18n="edu2.deg">M.Eng., Electrical Engineering</strong><span data-i18n="edu2.inst">University of Toronto, ON, Canada</span></span>
               </li>
               <li>
                 <span class="tl-when">2005.09 – 2010.06</span>
-                <span class="tl-what"><strong>B.S., Electrical and Computer Engineering</strong>University of Toronto, ON, Canada</span>
+                <span class="tl-what"><strong data-i18n="edu3.deg">B.S., Electrical and Computer Engineering</strong><span data-i18n="edu3.inst">University of Toronto, ON, Canada</span></span>
               </li>
             </ol>
           </div>
 
           <div class="prof-block reveal">
-            <p class="block-label">Professional Experience</p>
+            <p class="block-label" data-i18n="exp.label">Professional Experience</p>
             <ol class="timeline">
               <li>
+                <span class="tl-when" data-i18n="exp0.when">2022.09 – Present</span>
+                <span class="tl-what"><strong data-i18n="exp0.deg">Assistant Professor</strong><span data-i18n="exp0.inst">Department of System Semiconductor, Gachon University, Seongnam, Korea</span></span>
+              </li>
+              <li>
                 <span class="tl-when">2019.10 – 2022.08</span>
-                <span class="tl-what"><strong>Staff Engineer</strong>Samsung Electronics, Hwaseong, Korea</span>
+                <span class="tl-what"><strong data-i18n="exp1.deg">Staff Engineer</strong><span data-i18n="exp1.inst">Samsung Electronics, Hwaseong, Korea</span></span>
               </li>
               <li>
                 <span class="tl-when">2019.03 – 2019.09</span>
-                <span class="tl-what"><strong>Postdoctoral Fellow</strong>Seoul National University (SNU), Seoul, Korea</span>
+                <span class="tl-what"><strong data-i18n="exp2.deg">Postdoctoral Fellow</strong><span data-i18n="exp2.inst">Seoul National University (SNU), Seoul, Korea</span></span>
               </li>
             </ol>
           </div>
 
           <div class="prof-block reveal">
-            <p class="block-label">Research Interests</p>
+            <p class="block-label" data-i18n="interests.label">Research Interests</p>
             <ul class="interest-list">
-              <li>Precision Analog Circuits</li>
-              <li>High-precision Analog-to-Digital Converters (ADCs)</li>
-              <li>Power Management Integrated Circuits (PMICs)</li>
-              <li>Digital-Assisted Analog / Mixed-Signal Circuits</li>
-              <li>Digital Calibration and Correction Techniques</li>
+              <li data-i18n="int1">Precision Analog Circuits</li>
+              <li data-i18n="int2">High-precision Analog-to-Digital Converters (ADCs)</li>
+              <li data-i18n="int3">Power Management Integrated Circuits (PMICs)</li>
+              <li data-i18n="int4">Digital-Assisted Analog / Mixed-Signal Circuits</li>
+              <li data-i18n="int5">Digital Calibration and Correction Techniques</li>
             </ul>
           </div>
         </div>
@@ -531,35 +537,35 @@
   <section class="members" id="members">
     <div class="container">
       <div class="section-head reveal">
-        <p class="eyebrow"><span class="eyebrow-idx">04</span> People</p>
-        <h2>Members</h2>
-        <p class="section-lede">The AXIS Design Laboratory brings together graduate researchers working across precision analog design, data converters, power management, and in-sensor computing.</p>
+        <p class="eyebrow"><span class="eyebrow-idx">04</span> <span data-i18n="members.eyebrow">People</span></p>
+        <h2 data-i18n="members.title">Members</h2>
+        <p class="section-lede" data-i18n="members.lede">The AXIS Design Laboratory brings together graduate researchers working across precision analog design, data converters, power management, and in-sensor computing.</p>
       </div>
 
-      <p class="block-label reveal">Graduate Researchers</p>
+      <p class="block-label reveal" data-i18n="members.grad">Graduate Researchers</p>
       <div class="member-grid">
-        <div class="member-card reveal"><span class="avatar" aria-hidden="true">CK</span><h3>Chanhyuck Kang</h3><p class="member-kr">강찬혁</p><p class="member-role">M.S. Student</p></div>
-        <div class="member-card reveal"><span class="avatar" aria-hidden="true">JW</span><h3>Jaeyeon Won</h3><p class="member-kr">원재연</p><p class="member-role">M.S. Student</p></div>
-        <div class="member-card reveal"><span class="avatar" aria-hidden="true">GD</span><h3>Gyeongmin Do</h3><p class="member-kr">도경민</p><p class="member-role">M.S. Student</p></div>
-        <div class="member-card reveal"><span class="avatar" aria-hidden="true">MJ</span><h3>Minsoo Jeon</h3><p class="member-kr">전민수</p><p class="member-role">M.S. Student</p></div>
-        <div class="member-card reveal"><span class="avatar" aria-hidden="true">JH</span><h3>Jeonghyeon Han</h3><p class="member-kr">한정현</p><p class="member-role">M.S. Student</p></div>
-        <div class="member-card reveal"><span class="avatar" aria-hidden="true">GM</span><h3>Gyeongmin Moon</h3><p class="member-kr">문경민</p><p class="member-role">M.S. Student</p></div>
-        <div class="member-card reveal"><span class="avatar" aria-hidden="true">SO</span><h3>Seungpyo Oh</h3><p class="member-kr">오승표</p><p class="member-role">M.S. Student</p></div>
+        <div class="member-card reveal"><span class="avatar" aria-hidden="true">CK</span><h3>Chanhyuck Kang</h3><p class="member-kr">강찬혁</p><p class="member-role" data-i18n="role.ms">M.S. Student</p></div>
+        <div class="member-card reveal"><span class="avatar" aria-hidden="true">JW</span><h3>Jaeyeon Won</h3><p class="member-kr">원재연</p><p class="member-role" data-i18n="role.ms">M.S. Student</p></div>
+        <div class="member-card reveal"><span class="avatar" aria-hidden="true">GD</span><h3>Gyeongmin Do</h3><p class="member-kr">도경민</p><p class="member-role" data-i18n="role.ms">M.S. Student</p></div>
+        <div class="member-card reveal"><span class="avatar" aria-hidden="true">MJ</span><h3>Minsoo Jeon</h3><p class="member-kr">전민수</p><p class="member-role" data-i18n="role.ms">M.S. Student</p></div>
+        <div class="member-card reveal"><span class="avatar" aria-hidden="true">JH</span><h3>Jeonghyeon Han</h3><p class="member-kr">한정현</p><p class="member-role" data-i18n="role.ms">M.S. Student</p></div>
+        <div class="member-card reveal"><span class="avatar" aria-hidden="true">GM</span><h3>Gyeongmin Moon</h3><p class="member-kr">문경민</p><p class="member-role" data-i18n="role.ms">M.S. Student</p></div>
+        <div class="member-card reveal"><span class="avatar" aria-hidden="true">SO</span><h3>Seungpyo Oh</h3><p class="member-kr">오승표</p><p class="member-role" data-i18n="role.ms">M.S. Student</p></div>
       </div>
 
-      <p class="block-label reveal">Undergraduate Researchers</p>
+      <p class="block-label reveal" data-i18n="members.ugrad">Undergraduate Researchers</p>
       <div class="member-grid">
-        <div class="member-card reveal"><span class="avatar" aria-hidden="true">JJ</span><h3>Jonghun Jeong</h3><p class="member-kr">정종훈</p><p class="member-role">B.S. Student</p></div>
-        <div class="member-card reveal"><span class="avatar" aria-hidden="true">YL</span><h3>Yongseung Lee</h3><p class="member-kr">이용승</p><p class="member-role">B.S. Student</p></div>
-        <div class="member-card reveal"><span class="avatar" aria-hidden="true">HL</span><h3>Ho Seung Lee</h3><p class="member-kr">이호승</p><p class="member-role">B.S. Student</p></div>
+        <div class="member-card reveal"><span class="avatar" aria-hidden="true">JJ</span><h3>Jonghun Jeong</h3><p class="member-kr">정종훈</p><p class="member-role" data-i18n="role.bs">B.S. Student</p></div>
+        <div class="member-card reveal"><span class="avatar" aria-hidden="true">YL</span><h3>Yongseung Lee</h3><p class="member-kr">이용승</p><p class="member-role" data-i18n="role.bs">B.S. Student</p></div>
+        <div class="member-card reveal"><span class="avatar" aria-hidden="true">HL</span><h3>Ho Seung Lee</h3><p class="member-kr">이호승</p><p class="member-role" data-i18n="role.bs">B.S. Student</p></div>
       </div>
 
       <div class="recruit-banner reveal">
         <div class="recruit-text">
-          <p class="recruit-title">Openings</p>
-          <p class="recruit-desc">We welcome inquiries from prospective MS, PhD, and postdoctoral researchers with interest in analog/mixed-signal IC design. Please write to <a href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr</a> with a CV and a short statement of interest.</p>
+          <p class="recruit-title" data-i18n="openings.title">Openings</p>
+          <p class="recruit-desc" data-i18n="openings.desc">We welcome inquiries from prospective MS, PhD, and postdoctoral researchers with interest in analog/mixed-signal IC design. Please write to <a href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr</a> with a CV and a short statement of interest.</p>
         </div>
-        <a class="btn btn-primary" href="mailto:jrhee@gachon.ac.kr">Apply via email <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-primary" href="mailto:jrhee@gachon.ac.kr"><span data-i18n="openings.btn">Apply via email</span> <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
@@ -585,26 +591,26 @@
           <line x1="10.4" y1="37.6" x2="16" y2="32"/><line x1="37.6" y1="37.6" x2="32" y2="32"/>
         </g>
       </svg>
-      <p>Analog X Integrated Systems Design Laboratory. Department of System Semiconductor, Gachon University, Seongnam, Republic of Korea.</p>
+      <p data-i18n="footer.brand">Analog X Integrated Systems Design Laboratory. Department of System Semiconductor, Gachon University, Seongnam, Republic of Korea.</p>
     </div>
     <div class="footer-col">
-      <p class="footer-head">Contact</p>
+      <p class="footer-head" data-i18n="footer.contact">Contact</p>
       <a href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr</a>
       <p>Tel · 031-750-5698</p>
       <p>Room #6-10, Semiconductor Bldg.</p>
     </div>
     <div class="footer-col">
-      <p class="footer-head">Navigate</p>
-      <a href="#home">Home</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#professor">Professor</a>
-      <a href="#members">Members</a>
+      <p class="footer-head" data-i18n="footer.navigate">Navigate</p>
+      <a href="#home" data-i18n="nav.home">Home</a>
+      <a href="#research" data-i18n="nav.research">Research</a>
+      <a href="#publications" data-i18n="nav.publications">Publications</a>
+      <a href="#professor" data-i18n="nav.professor">Professor</a>
+      <a href="#members" data-i18n="nav.members">Members</a>
     </div>
   </div>
   <div class="container footer-bottom">
     <span>© <span id="year">2026</span> AXIS Design Laboratory · Gachon University</span>
-    <a class="to-top" href="#home" aria-label="Back to top">↑ Top</a>
+    <a class="to-top" href="#home" aria-label="Back to top" data-i18n="footer.top">↑ Top</a>
   </div>
 </footer>
 

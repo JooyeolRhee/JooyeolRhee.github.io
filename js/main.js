@@ -27,6 +27,128 @@
     });
   }
 
+  /* ---------- language toggle (EN / KO) ---------- */
+  /* English is the source of truth in the HTML; this dictionary only holds
+     Korean. On load the English strings are captured from the DOM so the
+     toggle can swap back without a reload. */
+  var KO = {
+    'nav.home': '홈',
+    'nav.research': '연구',
+    'nav.publications': '논문',
+    'nav.professor': '교수',
+    'nav.members': '구성원',
+    'nav.contact': '연락처',
+    'hero.tagline': 'AXIS 설계연구실 — 아날로그·혼성신호 집적회로의 중심축이 되는 연구실입니다.',
+    'hero.desc': '정밀 아날로그 회로, 데이터 컨버터, 전력관리 IC를 아우르며, 성능과 효율의 한계를 넓히는 다목적 집적회로와 시스템을 연구합니다.',
+    'hero.cta.explore': '연구 분야 보기',
+    'hero.cta.join': '연구실 지원',
+    'mission.eyebrow': '미션',
+    'mission.title': '실리콘에서 실제 환경까지,<br>재현 가능한 정밀도.',
+    'mission.body': 'AXIS는 성능과 효율을 높이는 다목적 집적회로와 시스템에 집중합니다. 정밀 아날로그 프런트엔드, 고해상도 아날로그-디지털 변환기, 전력관리 집적회로까지 연구 범위를 의도적으로 넓게 가져가되, 정확도·에너지 효율·현장 강건성이라는 공통 기준으로 묶습니다.',
+    'recruit.title': '신입 연구원 모집',
+    'recruit.desc': '열정 있는 <strong>석사</strong>·<strong>박사</strong> 과정 및 <strong>박사후연구원</strong>을 모집합니다. <a href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr</a>로 연락해 주세요.',
+    'research.eyebrow': '연구 분야',
+    'research.title': '무엇을 연구하는가',
+    'research.lede': 'AXIS는 초저전력·고정밀 센서 인터페이스, 전력관리·에너지 하베스팅, 데이터 컨버터, 인-센서/엣지 컴퓨팅을 위한 혼성신호 집적회로를 연구합니다. 실리콘에서 실제 배치 환경까지 — 재현 가능한 정밀도, 시스템 수준의 에너지 효율, 현장 강건성을 지향합니다.',
+    'focus.label': '핵심 주제',
+    'theme1.title': '전력관리·에너지 하베스팅 IC',
+    'theme1.body': '배터리 제약이 있거나 배터리 없이 동작하는 분산 센서·엣지 디바이스를 위한 PMIC를 연구합니다. 자율 스타트업, 적응형 전력 추적 알고리즘, 보호·안전 기능을 내장한 멀티모드 DC–DC 변환을 다루며, LDO와 정밀 기준회로(BGR)를 이용한 온칩 레귤레이션, AI 서버·HBM 스택을 위한 전력 전달도 연구합니다.',
+    'theme1.focus': '에너지 부족 소스의 스타트업 · 최대전력추적 제어 · 모드 전환 효율 · 온칩 레귤레이션(LDO) · 정밀 기준회로(BGR) · AI 서버 / HBM 전력 전달.',
+    'theme2.title': '정밀 아날로그·센서 인터페이스',
+    'theme2.body': '환경·산업·바이오 센싱을 위한 저전력·저드리프트 아날로그 프런트엔드를 설계합니다. 온도와 수명 전반의 정확도, 높은 입력 임피던스, 간섭에 대한 강건성에 중점을 둡니다.',
+    'theme2.focus': '정밀 증폭 · 고임피던스 리드아웃 · 캘리브레이션과 시스템 수준 선형성.',
+    'theme3.title': '데이터 컨버터 (ADC / DAC)',
+    'theme3.body': '센싱·계측에 특화된 고효율 데이터 컨버터를 개발합니다. 응용별로 아키텍처를 선택해 낮은 공급 전압에서 높은 유효 해상도를 달성하고, 아날로그 프런트엔드·디지털 후처리와 공동 최적화합니다.',
+    'theme3.focus': '컨버터-시스템 공동 설계 · 다이내믹 레인지 관리 · 백그라운드 캘리브레이션 · 동작 모델부터 실리콘까지의 검증.',
+    'theme4.title': '인-센서 컴퓨팅·엣지 AI',
+    'theme4.body': '데이터 이동과 에너지를 줄이는 근센서 아날로그 전처리와 저비용 특징 추출을 탐구합니다. 센싱 방식과 후단 디지털 파이프라인에 맞춰 공동 최적화합니다.',
+    'theme4.focus': '아날로그 도메인 전처리 · 이벤트 구동 캡처 · 포토닉·저항성·용량성 센서를 위한 표준 인터페이스.',
+    'pubs.eyebrow': '대표 논문',
+    'pubs.title': '논문',
+    'pubs.note': '저널·학회 논문 <b>28</b>편 · <i class="ast">*</i> 교신저자',
+    'pubs.filter.all': '전체',
+    'pubs.filter.journal': '저널',
+    'pubs.filter.conf': '학회',
+    'prof.eyebrow': '지도교수',
+    'prof.title': '교수',
+    'prof.role': '조교수',
+    'prof.dept': '가천대학교 시스템반도체학과',
+    'label.email': '이메일',
+    'label.tel': '전화',
+    'label.office': '연구실',
+    'edu.label': '학력',
+    'edu1.deg': '박사, 전기·정보공학부',
+    'edu1.inst': '서울대학교, 서울',
+    'edu2.deg': '석사(M.Eng.), 전기공학',
+    'edu2.inst': '토론토대학교, 캐나다',
+    'edu3.deg': '학사, 전기·컴퓨터공학',
+    'edu3.inst': '토론토대학교, 캐나다',
+    'exp.label': '경력',
+    'exp0.when': '2022.09 – 현재',
+    'exp0.deg': '조교수',
+    'exp0.inst': '가천대학교 시스템반도체학과, 성남',
+    'exp1.deg': '스태프 엔지니어',
+    'exp1.inst': '삼성전자, 화성',
+    'exp2.deg': '박사후연구원',
+    'exp2.inst': '서울대학교, 서울',
+    'interests.label': '연구 관심 분야',
+    'int1': '정밀 아날로그 회로',
+    'int2': '고정밀 아날로그-디지털 변환기 (ADC)',
+    'int3': '전력관리 집적회로 (PMIC)',
+    'int4': '디지털 보조 아날로그/혼성신호 회로',
+    'int5': '디지털 캘리브레이션·보정 기법',
+    'members.eyebrow': '구성원',
+    'members.title': '연구실 멤버',
+    'members.lede': 'AXIS 설계연구실에는 정밀 아날로그 설계, 데이터 컨버터, 전력관리, 인-센서 컴퓨팅을 연구하는 대학원 연구원들이 함께하고 있습니다.',
+    'members.grad': '대학원 연구원',
+    'members.ugrad': '학부 연구원',
+    'role.ms': '석사과정',
+    'role.bs': '학부연구생',
+    'openings.title': '모집 안내',
+    'openings.desc': '아날로그/혼성신호 IC 설계에 관심 있는 석·박사 과정 및 박사후연구원의 지원 문의를 환영합니다. CV와 간단한 관심 분야 소개를 <a href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr</a>로 보내 주세요.',
+    'openings.btn': '이메일로 지원하기',
+    'footer.brand': 'Analog X Integrated Systems 설계연구실 · 가천대학교 시스템반도체학과, 경기도 성남시, 대한민국.',
+    'footer.contact': '연락처',
+    'footer.navigate': '바로가기',
+    'footer.top': '↑ 맨 위로'
+  };
+
+  var langToggle = document.getElementById('langToggle');
+  var EN = {};
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var key = el.getAttribute('data-i18n');
+    if (!(key in EN)) EN[key] = el.innerHTML;
+  });
+
+  function applyLang(lang) {
+    document.documentElement.setAttribute('lang', lang === 'ko' ? 'ko' : 'en');
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      var html = lang === 'ko' ? KO[key] : EN[key];
+      if (html !== undefined) el.innerHTML = html;
+    });
+    if (langToggle) {
+      langToggle.textContent = lang === 'ko' ? 'EN' : 'KO';
+      langToggle.setAttribute('aria-label', lang === 'ko' ? 'View in English' : '한국어로 보기');
+    }
+  }
+
+  var initialLang = 'en';
+  try {
+    var storedLang = localStorage.getItem('axis-lang');
+    if (storedLang === 'ko' || storedLang === 'en') initialLang = storedLang;
+    else if ((navigator.language || '').toLowerCase().indexOf('ko') === 0) initialLang = 'ko';
+  } catch (e) { /* private mode */ }
+  if (initialLang === 'ko') applyLang('ko');
+
+  if (langToggle) {
+    langToggle.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('lang') === 'ko' ? 'en' : 'ko';
+      applyLang(next);
+      try { localStorage.setItem('axis-lang', next); } catch (e) { /* private mode */ }
+    });
+  }
+
   /* ---------- mobile menu ---------- */
   var menuToggle = document.getElementById('menuToggle');
   var navLinks = document.getElementById('navLinks');
