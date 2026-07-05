@@ -10,13 +10,14 @@
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#0b0d10' : '#faf9f5');
+    // the nav and hero stay dark in both themes, so the browser chrome does too
+    if (themeMeta) themeMeta.setAttribute('content', '#0b0d10');
     if (themeToggle) {
       themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     }
   }
 
-  applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+  applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
 
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
@@ -175,12 +176,12 @@
     }
 
     function themeColors() {
-      var light = document.documentElement.getAttribute('data-theme') === 'light';
+      // the hero is dark in both themes, so the traces always use the dark palette
       var dim = width < 640 ? 0.62 : 1; // keep hero text readable on phones
       return {
-        analog: light ? 'rgba(235, 110, 30, ' + (0.55 * dim) + ')' : 'rgba(255, 138, 61, ' + (0.62 * dim) + ')',
-        analogGlow: light ? 'rgba(235, 110, 30, ' + (0.25 * dim) + ')' : 'rgba(255, 138, 61, ' + (0.4 * dim) + ')',
-        digital: light ? 'rgba(45, 111, 209, ' + (0.34 * dim) + ')' : 'rgba(91, 168, 255, ' + (0.3 * dim) + ')'
+        analog: 'rgba(255, 138, 61, ' + (0.62 * dim) + ')',
+        analogGlow: 'rgba(255, 138, 61, ' + (0.4 * dim) + ')',
+        digital: 'rgba(91, 168, 255, ' + (0.3 * dim) + ')'
       };
     }
 
@@ -279,12 +280,5 @@
         if (!running) draw(t || 4200);
       }, 120);
     });
-
-    // repaint the paused/static frame when the theme changes
-    if ('MutationObserver' in window) {
-      new MutationObserver(function () {
-        if (!running) draw(t || 4200);
-      }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-    }
   }
 })();

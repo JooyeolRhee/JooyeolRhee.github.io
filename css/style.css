@@ -1,9 +1,13 @@
 /* ============================================================
    AXIS Design Lab — style.css
-   Precision-instrument dark theme with warm light alternative
+   Precision-instrument dark theme; the light theme is a hybrid
+   that keeps the nav, hero, and footer on the dark palette
    ============================================================ */
 
-:root {
+:root,
+[data-theme="light"] .nav,
+[data-theme="light"] .hero,
+[data-theme="light"] .footer {
   --accent: #ff8a3d;
   --accent-soft: rgba(255, 138, 61, 0.14);
   --accent-2: #5ba8ff;
@@ -52,6 +56,16 @@
   --gold: #7d5a1a;
   --btn-text: #ffffff;
 }
+
+/* the hero owns no background in the full-dark theme (body shows through),
+   so the hybrid light theme must paint it explicitly; color is re-declared
+   because descendants otherwise inherit the light value computed on body */
+[data-theme="light"] .hero,
+[data-theme="light"] .footer {
+  background: var(--bg0);
+  color: var(--text);
+}
+[data-theme="light"] .footer { background: var(--bg1); }
 
 /* ---------- base ---------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
