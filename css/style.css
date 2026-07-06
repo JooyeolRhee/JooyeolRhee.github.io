@@ -798,16 +798,18 @@ section { position: relative; }
 }
 .member-card:hover { transform: translateY(-4px); border-color: var(--line-strong); box-shadow: var(--card-shadow); }
 .avatar {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px; height: 56px;
-  border-radius: 13px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border-radius: 11px;
   object-fit: cover;
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.04em;
+  font-size: 30px;
+  letter-spacing: 0.06em;
   color: var(--accent);
   background: var(--accent-soft);
   border: 1px solid rgba(255, 138, 61, 0.4);
