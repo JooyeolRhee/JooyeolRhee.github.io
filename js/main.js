@@ -102,6 +102,7 @@
     'members.lede': 'AXIS 설계연구실에는 정밀 아날로그 설계, 데이터 컨버터, 전력관리, 인-센서 컴퓨팅을 연구하는 대학원 연구원들이 함께하고 있습니다.',
     'members.grad': '대학원 연구원',
     'members.ugrad': '학부 연구원',
+    'role.msphd': '석박사 통합과정',
     'role.ms': '석사과정',
     'role.bs': '학부연구생',
     'openings.title': '모집 안내',
