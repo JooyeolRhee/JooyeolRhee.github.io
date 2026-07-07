@@ -157,7 +157,7 @@ a { color: inherit; }
 .nav-links { display: flex; align-items: center; gap: 2px; }
 .nav-link {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   text-decoration: none;
@@ -279,7 +279,7 @@ a { color: inherit; }
 
 .hero-eyebrow {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--accent);
@@ -397,7 +397,7 @@ section { position: relative; }
 .section-head { margin-bottom: clamp(36px, 5vw, 56px); }
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.26em;
   text-transform: uppercase;
   color: var(--accent);
@@ -889,7 +889,7 @@ section { position: relative; }
 .to-top:hover { color: var(--accent); }
 
 /* ---------- responsive ---------- */
-@media (max-width: 960px) {
+@media (max-width: 1000px) {
   .nav-links {
     position: fixed;
     top: 0;
@@ -934,7 +934,7 @@ section { position: relative; }
   .timeline li::before { top: 20px; }
 }
 
-@media (max-height: 480px) and (max-width: 960px) {
+@media (max-height: 480px) and (max-width: 1000px) {
   .nav-links { padding-top: 74px; }
   .nav-link { padding: 10px 12px; }
 }
