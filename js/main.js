@@ -134,11 +134,12 @@
     }
   }
 
+  /* English is the default for first-time visitors; only an explicit
+     toggle choice (persisted in localStorage) switches the language */
   var initialLang = 'en';
   try {
     var storedLang = localStorage.getItem('axis-lang');
     if (storedLang === 'ko' || storedLang === 'en') initialLang = storedLang;
-    else if ((navigator.language || '').toLowerCase().indexOf('ko') === 0) initialLang = 'ko';
   } catch (e) { /* private mode */ }
   if (initialLang === 'ko') applyLang('ko');
 
