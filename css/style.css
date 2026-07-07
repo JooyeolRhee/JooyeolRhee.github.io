@@ -872,7 +872,9 @@ section { position: relative; }
   margin-bottom: 9px;
 }
 .footer-col a:hover { color: var(--accent); }
-.footer-map { margin-top: 44px; }
+/* inside the footer flex grid: last full-width row on desktop, but back in
+   DOM order (Contact -> Location -> Navigate) when the columns stack */
+.footer-map { flex-basis: 100%; order: 10; margin-top: 8px; }
 .footer-map iframe {
   display: block;
   width: 100%;
@@ -957,6 +959,7 @@ section { position: relative; }
   .pub-filter { padding: 11px 18px; }
   .recruit-banner { flex-direction: column; align-items: flex-start; }
   .member-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .footer-map { order: 0; margin-top: 0; }
   .footer-map iframe { height: 220px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
