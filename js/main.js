@@ -111,6 +111,7 @@
     'footer.brand': 'Analog X Integrated Systems 설계연구실 · 가천대학교 시스템반도체학과, 경기도 성남시, 대한민국.',
     'footer.contact': '연락처',
     'footer.navigate': '바로가기',
+    'footer.location': '오시는 길',
     'footer.top': '↑ 맨 위로'
   };
 
