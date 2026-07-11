@@ -840,6 +840,18 @@ section { position: relative; }
   border-top: 1px solid var(--line);
 }
 
+.member-mail {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+  text-decoration: none;
+  margin-top: 8px;
+  word-break: break-all;
+  transition: color 0.2s ease;
+}
+.member-mail:hover { color: var(--accent); }
+
 /* ---------- footer ---------- */
 .footer {
   border-top: 1px solid var(--line);
