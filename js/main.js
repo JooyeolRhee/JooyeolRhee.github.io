@@ -65,7 +65,7 @@
     'theme4.focus': '아날로그 도메인 전처리 · 이벤트 구동 캡처 · 포토닉·저항성·용량성 센서를 위한 표준 인터페이스.',
     'pubs.eyebrow': '대표 논문',
     'pubs.title': '논문',
-    'pubs.note': '저널·학회 논문 <b>28</b>편 · <i class="ast">*</i> 교신저자',
+    'pubs.note': '저널·학회 논문 <b>29</b>편 · <i class="ast">*</i> 교신저자',
     'pubs.filter.all': '전체',
     'pubs.filter.journal': '저널',
     'pubs.filter.conf': '학회',
