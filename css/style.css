@@ -1,12 +1,10 @@
 /* ============================================================
    AXIS Design Lab — style.css
    Precision-instrument dark theme; the light theme is a hybrid
-   that keeps the nav, hero, and footer on the dark palette
+   that keeps only the footer on the dark palette
    ============================================================ */
 
 :root,
-[data-theme="light"] .nav,
-[data-theme="light"] .hero,
 [data-theme="light"] .footer {
   --accent: #ff8a3d;
   --accent-soft: rgba(255, 138, 61, 0.14);
@@ -57,15 +55,9 @@
   --btn-text: #ffffff;
 }
 
-/* the hero owns no background in the full-dark theme (body shows through),
-   so the hybrid light theme must paint it explicitly; color is re-declared
-   because descendants otherwise inherit the light value computed on body */
-[data-theme="light"] .hero,
-[data-theme="light"] .footer {
-  background: var(--bg0);
-  color: var(--text);
-}
-[data-theme="light"] .footer { background: var(--bg1); }
+/* color is re-declared because the footer's descendants otherwise inherit
+   the light value computed on body */
+[data-theme="light"] .footer { color: var(--text); }
 
 /* ---------- base ---------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -82,6 +74,8 @@ body {
   transition: background 0.35s ease, color 0.35s ease;
 }
 body.menu-open { overflow: hidden; }
+/* Korean wraps between words (eojeol), not mid-word */
+:lang(ko) body { word-break: keep-all; overflow-wrap: break-word; }
 
 ::selection { background: var(--accent); color: var(--btn-text); }
 
@@ -301,6 +295,7 @@ a { color: inherit; }
   text-wrap: balance;
 }
 .x-mark { color: var(--accent); text-shadow: 0 0 34px var(--glow); }
+[data-theme="light"] .x-mark { text-shadow: none; } /* a glow reads as a smudge on paper */
 
 .hero-tagline {
   font-family: var(--font-display);
@@ -317,6 +312,9 @@ a { color: inherit; }
   max-width: 58ch;
   margin-top: 16px;
 }
+/* a background-colored halo lifts the small text off the scope traces,
+   which otherwise strike through it */
+.hero-tagline, .hero-desc { text-shadow: 0 0 4px var(--bg0), 0 0 10px var(--bg0), 0 0 18px var(--bg0); }
 
 .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 38px; }
 
@@ -936,6 +934,7 @@ section { position: relative; }
     transition: transform 0.3s ease, visibility 0s linear 0.3s;
     z-index: 90;
   }
+  [data-theme="light"] .nav-links { box-shadow: -24px 0 60px -30px rgba(24, 26, 27, 0.3); }
   .nav-links.open { transform: translateX(0); visibility: visible; transition: transform 0.3s ease; }
   .nav-link { font-size: 15px; width: 100%; padding: 13px 12px; }
   .nav-link::after { display: none; }

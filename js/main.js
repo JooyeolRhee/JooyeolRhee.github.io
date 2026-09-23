@@ -10,8 +10,8 @@
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    // the nav and hero stay dark in both themes, so the browser chrome does too
-    if (themeMeta) themeMeta.setAttribute('content', '#0b0d10');
+    // match the browser chrome to the nav
+    if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#0b0d10' : '#faf9f5');
     if (themeToggle) {
       themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     }
@@ -30,7 +30,8 @@
   /* ---------- language toggle (EN / KO) ---------- */
   /* English is the source of truth in the HTML; this dictionary only holds
      Korean. On load the English strings are captured from the DOM so the
-     toggle can swap back without a reload. */
+     toggle can swap back without a reload. The \u2060 (word joiner) in
+     인-\u2060센서 stops the line from breaking at the hyphen. */
   var KO = {
     'nav.home': '홈',
     'nav.research': '연구',
@@ -39,17 +40,17 @@
     'nav.members': '구성원',
     'nav.contact': '연락처',
     'hero.tagline': 'AXIS 설계연구실 — 아날로그·혼성신호 집적회로의 중심축이 되는 연구실입니다.',
-    'hero.desc': '정밀 아날로그 회로, 데이터 컨버터, 전력관리 IC, 그리고 AI 시스템을 위한 회로까지 아우르며, 성능과 효율의 한계를 넓히는 다목적 집적회로와 시스템을 연구합니다.',
+    'hero.desc': '정밀 아날로그 회로, 데이터 컨버터, 전력관리 IC, 그리고 엣지 AI를 위한 인-\u2060센서 컴퓨팅까지 아우르며, 성능과 효율의 한계를 넓히는 다목적 집적회로와 시스템을 연구합니다.',
     'hero.cta.explore': '연구 분야 보기',
     'hero.cta.join': '연구실 지원',
-    'mission.eyebrow': '미션',
+    'mission.eyebrow': '설계 철학',
     'mission.title': '모든 축에서 —<br>정밀하게, 효율적으로, 작게, 강인하게.',
-    'mission.body': 'AXIS는 정밀 아날로그 프런트엔드부터 고해상도 데이터 컨버터, 전력관리 IC, AI 시스템을 위한 회로까지 폭넓은 집적회로와 시스템을 설계합니다. 연구실 이름의 X는 변수입니다. 응용은 계속 달라지지만 기준은 달라지지 않습니다 — 정확도, 에너지 효율, 소형화, 그리고 강건성.',
+    'mission.body': 'AXIS는 정밀 아날로그 프런트엔드부터 고해상도 데이터 컨버터, 전력관리 IC, 엣지 AI를 위한 인-\u2060센서 컴퓨팅 회로까지 폭넓은 집적회로와 시스템을 설계합니다. 연구실 이름의 X는 변수입니다. 응용은 계속 달라지지만 기준은 달라지지 않습니다 — 정확도, 에너지 효율, 소형화, 그리고 강건성.',
     'recruit.title': '신입 연구원 모집',
     'recruit.desc': '열정 있는 <strong>석사</strong>·<strong>박사</strong> 과정 및 <strong>박사후연구원</strong>을 모집합니다. <a href="mailto:jrhee@gachon.ac.kr">jrhee@gachon.ac.kr</a>로 연락해 주세요.',
     'research.eyebrow': '연구 분야',
     'research.title': '무엇을 연구하는가',
-    'research.lede': 'AXIS는 초저전력·고정밀 센서 인터페이스, 전력관리·에너지 하베스팅, 데이터 컨버터, 그리고 엣지 AI·인-센서 컴퓨팅을 위한 혼성신호 집적회로를 연구합니다. 우리의 미션은 네 개의 축 위에 있습니다 — 시간과 온도에도 유지되는 정확도, 시스템 수준의 에너지 효율, 소형·고집적 설계, 그리고 실환경에서의 강건성.',
+    'research.lede': 'AXIS는 초저전력·고정밀 센서 인터페이스, 전력관리·에너지 하베스팅, 데이터 컨버터, 그리고 엣지 AI·인-\u2060센서 컴퓨팅을 위한 혼성신호 집적회로를 연구합니다. 우리의 연구는 네 개의 축 위에 있습니다 — 시간과 온도에도 유지되는 정확도, 시스템 수준의 에너지 효율, 소형·고집적 설계, 그리고 실환경에서의 강건성.',
     'focus.label': '핵심 주제',
     'theme1.title': '전력관리·에너지 하베스팅 IC',
     'theme1.body': '배터리 제약이 있거나 배터리 없이 동작하는 분산 센서·엣지 디바이스를 위한 PMIC를 연구합니다. 자율 스타트업, 적응형 전력 추적 알고리즘, 보호·안전 기능을 내장한 멀티모드 DC–DC 변환을 다루며, LDO와 정밀 기준회로(BGR)를 이용한 온칩 레귤레이션, AI 서버·HBM 스택을 위한 전력 전달도 연구합니다.',
@@ -60,7 +61,7 @@
     'theme3.title': '데이터 컨버터 (ADC / DAC)',
     'theme3.body': '센싱·계측에 특화된 고효율 데이터 컨버터를 개발합니다. 응용별로 아키텍처를 선택해 낮은 공급 전압에서 높은 유효 해상도를 달성하고, 아날로그 프런트엔드·디지털 후처리와 공동 최적화합니다.',
     'theme3.focus': '컨버터-시스템 공동 설계 · 다이내믹 레인지 관리 · 백그라운드 캘리브레이션 · 동작 모델부터 실리콘까지의 검증.',
-    'theme4.title': '인-센서 컴퓨팅·엣지 AI',
+    'theme4.title': '인-\u2060센서 컴퓨팅·엣지 AI',
     'theme4.body': '데이터 이동과 에너지를 줄이는 근센서 아날로그 전처리와 저비용 특징 추출을 탐구합니다. 센싱 방식과 후단 디지털 파이프라인에 맞춰 공동 최적화합니다.',
     'theme4.focus': '아날로그 도메인 전처리 · 이벤트 구동 캡처 · 포토닉·저항성·용량성 센서를 위한 표준 인터페이스.',
     'pubs.eyebrow': '대표 논문',
@@ -99,7 +100,7 @@
     'int5': '디지털 캘리브레이션·보정 기법',
     'members.eyebrow': '구성원',
     'members.title': '연구실 멤버',
-    'members.lede': 'AXIS 설계연구실에는 정밀 아날로그 설계, 데이터 컨버터, 전력관리, 인-센서 컴퓨팅을 연구하는 대학원 연구원들이 함께하고 있습니다.',
+    'members.lede': 'AXIS 설계연구실에는 정밀 아날로그 설계, 데이터 컨버터, 전력관리, 인-\u2060센서 컴퓨팅을 연구하는 대학원 연구원들이 함께하고 있습니다.',
     'members.grad': '대학원 연구원',
     'members.ugrad': '학부 연구원',
     'role.msphd': '석박사 통합과정',
@@ -301,12 +302,19 @@
     }
 
     function themeColors() {
-      // the hero is dark in both themes, so the traces always use the dark palette
       var dim = width < 640 ? 0.62 : 1; // keep hero text readable on phones
+      if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        return {
+          analog: 'rgba(255, 138, 61, ' + (0.62 * dim) + ')',
+          analogGlow: 'rgba(255, 138, 61, ' + (0.4 * dim) + ')',
+          digital: 'rgba(91, 168, 255, ' + (0.3 * dim) + ')'
+        };
+      }
+      // on paper a glow reads as blur, so the halo is kept faint
       return {
-        analog: 'rgba(255, 138, 61, ' + (0.62 * dim) + ')',
-        analogGlow: 'rgba(255, 138, 61, ' + (0.4 * dim) + ')',
-        digital: 'rgba(91, 168, 255, ' + (0.3 * dim) + ')'
+        analog: 'rgba(185, 59, 9, ' + (0.62 * dim) + ')',
+        analogGlow: 'rgba(185, 59, 9, ' + (0.12 * dim) + ')',
+        digital: 'rgba(31, 92, 184, ' + (0.28 * dim) + ')'
       };
     }
 
@@ -405,5 +413,12 @@
         if (!running) draw(t || 4200);
       }, 120);
     });
+
+    // the trace colors follow the theme; a stopped canvas needs a repaint
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function () {
+        if (!running) draw(t || 4200);
+      });
+    }
   }
 })();
