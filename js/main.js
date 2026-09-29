@@ -11,7 +11,7 @@
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     // match the browser chrome to the nav
-    if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#0b0d10' : '#faf9f5');
+    if (themeMeta) themeMeta.setAttribute('content', theme === 'dark' ? '#0b0d10' : '#ffffff');
     if (themeToggle) {
       themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     }
